@@ -8,44 +8,81 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct Contact: Identifiable {
+struct Contact: Identifiable, Equatable {
     let id: UUID
-    let name: String
+    var name: String
 }
 
 @Reducer
 struct ContactsFeature {
+    
     @ObservableState
     struct State {
-        var contacts: [Contact] = []
+        @Presents var addContact: AddContactsFeature.State?
+        var contacts: IdentifiedArrayOf<Contact> = []
     }
     
     enum Action {
         case addButtonTapped
+        case addContact(PresentationAction<AddContactsFeature.Action>)
+    }
+    
+    var body: some ReducerOf<Self> {
+        Reduce { state, action in
+            switch action {
+            case .addButtonTapped:
+                state.addContact = AddContactsFeature.State(contact: Contact(id: UUID(), name: "Bob"))
+                return .none
+       
+            case .addContact(.presented(.delegate(let addContactAction))):
+                switch addContactAction {
+                case .cancel:
+                    state.addContact = nil
+                    
+                    return .none
+                case .saveContact(let contact):
+                    state.contacts.append(contact)
+                    state.addContact = nil
+                    
+                    return .none
+                }
+            case .addContact:
+                return .none
+            }
+        }
+        .ifLet(\.$addContact, action: \.addContact) {
+            AddContactsFeature()
+        }
     }
 }
 
 struct ContactsView: View {
-  let store: StoreOf<ContactsFeature>
+  @Bindable var store: StoreOf<ContactsFeature>
   
-  var body: some View {
-    NavigationStack {
-      List {
-        ForEach(store.contacts) { contact in
-          Text(contact.name)
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(store.contacts) { contact in
+                    Text(contact.name)
+                }
+            }
+            .navigationTitle("Contacts")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        store.send(.addButtonTapped)
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
-      }
-      .navigationTitle("Contacts")
-      .toolbar {
-        ToolbarItem {
-          Button {
-            store.send(.addButtonTapped)
-          } label: {
-            Image(systemName: "plus")
-          }
+        .sheet(item: $store.scope(state: \.addContact,
+                                  action: \.addContact)) { store in
+            NavigationStack {
+                AddContactsView(store: store)
+            }
         }
-      }
-    }
   }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE25BE8A2B866F43004230CC /* AddContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE892B866F43004230CC /* AddContactsFeature.swift */; };
 		CE2EFE362B866DAD001CB468 /* TCANavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */; };
 		CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE372B866DAD001CB468 /* ContentView.swift */; };
 		CE2EFE3A2B866DAE001CB468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EFE392B866DAE001CB468 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE25BE892B866F43004230CC /* AddContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsFeature.swift; sourceTree = "<group>"; };
 		CE2EFE322B866DAD001CB468 /* TCANavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCANavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationApp.swift; sourceTree = "<group>"; };
 		CE2EFE372B866DAD001CB468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */,
 				CE2EFE372B866DAD001CB468 /* ContentView.swift */,
 				CE2EFE462B866DE2001CB468 /* ContactsFeature.swift */,
+				CE25BE892B866F43004230CC /* AddContactsFeature.swift */,
 				CE2EFE392B866DAE001CB468 /* Assets.xcassets */,
 				CE2EFE3B2B866DAE001CB468 /* Preview Content */,
 			);
@@ -151,6 +154,7 @@
 				CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */,
 				CE2EFE362B866DAD001CB468 /* TCANavigationApp.swift in Sources */,
 				CE2EFE472B866DE2001CB468 /* ContactsFeature.swift in Sources */,
+				CE25BE8A2B866F43004230CC /* AddContactsFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
