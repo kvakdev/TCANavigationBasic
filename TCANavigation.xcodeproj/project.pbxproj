@@ -11,6 +11,8 @@
 		CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE372B866DAD001CB468 /* ContentView.swift */; };
 		CE2EFE3A2B866DAE001CB468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EFE392B866DAE001CB468 /* Assets.xcassets */; };
 		CE2EFE3D2B866DAE001CB468 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EFE3C2B866DAE001CB468 /* Preview Assets.xcassets */; };
+		CE2EFE452B866DC6001CB468 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CE2EFE442B866DC6001CB468 /* ComposableArchitecture */; };
+		CE2EFE472B866DE2001CB468 /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE462B866DE2001CB468 /* ContactsFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		CE2EFE372B866DAD001CB468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE2EFE392B866DAE001CB468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE2EFE3C2B866DAE001CB468 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE2EFE462B866DE2001CB468 /* ContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2EFE452B866DC6001CB468 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */,
 				CE2EFE372B866DAD001CB468 /* ContentView.swift */,
+				CE2EFE462B866DE2001CB468 /* ContactsFeature.swift */,
 				CE2EFE392B866DAE001CB468 /* Assets.xcassets */,
 				CE2EFE3B2B866DAE001CB468 /* Preview Content */,
 			);
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = TCANavigation;
+			packageProductDependencies = (
+				CE2EFE442B866DC6001CB468 /* ComposableArchitecture */,
+			);
 			productName = TCANavigation;
 			productReference = CE2EFE322B866DAD001CB468 /* TCANavigation.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = CE2EFE292B866DAD001CB468;
+			packageReferences = (
+				CE2EFE432B866DC6001CB468 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = CE2EFE332B866DAD001CB468 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			files = (
 				CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */,
 				CE2EFE362B866DAD001CB468 /* TCANavigationApp.swift in Sources */,
+				CE2EFE472B866DE2001CB468 /* ContactsFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE2EFE432B866DC6001CB468 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE2EFE442B866DC6001CB468 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE2EFE432B866DC6001CB468 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE2EFE2A2B866DAD001CB468 /* Project object */;
 }
