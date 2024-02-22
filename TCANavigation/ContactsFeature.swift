@@ -19,12 +19,19 @@ struct ContactsFeature {
     @ObservableState
     struct State {
         @Presents var addContact: AddContactsFeature.State?
+        @Presents var alert: AlertState<Action.Alert>?
         var contacts: IdentifiedArrayOf<Contact> = []
     }
     
     enum Action {
         case addButtonTapped
         case addContact(PresentationAction<AddContactsFeature.Action>)
+        case deleteButtonTapped(id: Contact.ID)
+        case alert(PresentationAction<Alert>)
+        
+        enum Alert {
+            case confirmDeletion(id: Contact.ID)
+        }
     }
     
     var body: some ReducerOf<Self> {
@@ -38,13 +45,33 @@ struct ContactsFeature {
                 state.contacts.append(contact)
                 
                 return .none
+            
             case .addContact:
+                return .none
+            
+            case let .deleteButtonTapped(id: id):
+                state.alert = AlertState {
+                    TextState("Are you sure?")
+                } actions: {
+                    ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
+                        TextState("Delete")
+                    }
+                }
+                return .none
+                
+            case let .alert(.presented(.confirmDeletion(id: id))):
+                state.contacts.remove(id: id)
+                
+                return .none
+                
+            case .alert(.dismiss):
                 return .none
             }
         }
         .ifLet(\.$addContact, action: \.addContact) {
             AddContactsFeature()
         }
+        .ifLet(\.$alert, action: \.alert)
     }
 }
 
@@ -55,7 +82,16 @@ struct ContactsView: View {
         NavigationStack {
             List {
                 ForEach(store.contacts) { contact in
-                    Text(contact.name)
+                    HStack {
+                        Text(contact.name)
+                        Spacer()
+                        Button {
+                            store.send(.deleteButtonTapped(id: contact.id))
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
                 }
             }
             .navigationTitle("Contacts")
@@ -75,6 +111,7 @@ struct ContactsView: View {
                 AddContactsView(store: store)
             }
         }
+        .alert(store: store.scope(state: \.$alert, action: \.alert))
   }
 }
 
