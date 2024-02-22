@@ -10,6 +10,7 @@ import ComposableArchitecture
 
 @Reducer
 struct AddContactsFeature {
+    @Dependency(\.dismiss) var dismiss
     
     @ObservableState
     struct State: Equatable {
@@ -24,6 +25,7 @@ struct AddContactsFeature {
         case setName(String)
         case delegate(Delegate)
         case saveButtonTapped
+        case cancelButtonTapped
         
         enum Delegate: Equatable {
             case cancel
@@ -42,8 +44,13 @@ struct AddContactsFeature {
           case let .setName(name):
             state.contact.name = name
             return .none
+          case .cancelButtonTapped:
+              return .run { _ in await self.dismiss() }
           case .saveButtonTapped:
-              return .send(.delegate(.saveContact(state.contact)))
+              return .run { [contact = state.contact] send in
+                  await send(.delegate(.saveContact(contact)))
+                  await self.dismiss()
+              }
           }
         }
       }
@@ -62,7 +69,7 @@ struct AddContactsView: View {
            .toolbar {
              ToolbarItem {
                Button("Cancel") {
-                   store.send(.delegate(.cancel))
+                   store.send(.cancelButtonTapped)
                }
              }
            }
