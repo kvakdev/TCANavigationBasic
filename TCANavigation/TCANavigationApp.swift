@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TCANavigationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContactsView(store: Store(initialState: .init(), reducer: { ContactsFeature() }))
         }
     }
 }
