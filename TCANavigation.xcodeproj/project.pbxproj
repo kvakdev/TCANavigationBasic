@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE25BE8A2B866F43004230CC /* AddContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE892B866F43004230CC /* AddContactsFeature.swift */; };
+		CE25BE922B88C181004230CC /* TCANavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE912B88C181004230CC /* TCANavigationTests.swift */; };
+		CE25BE992B88C199004230CC /* ContactsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE982B88C199004230CC /* ContactsFeatureTests.swift */; };
 		CE2EFE362B866DAD001CB468 /* TCANavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */; };
 		CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE372B866DAD001CB468 /* ContentView.swift */; };
 		CE2EFE3A2B866DAE001CB468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EFE392B866DAE001CB468 /* Assets.xcassets */; };
@@ -16,8 +18,21 @@
 		CE2EFE472B866DE2001CB468 /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE462B866DE2001CB468 /* ContactsFeature.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE25BE932B88C181004230CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2EFE2A2B866DAD001CB468 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE2EFE312B866DAD001CB468;
+			remoteInfo = TCANavigation;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CE25BE892B866F43004230CC /* AddContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsFeature.swift; sourceTree = "<group>"; };
+		CE25BE8F2B88C181004230CC /* TCANavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCANavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE25BE912B88C181004230CC /* TCANavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationTests.swift; sourceTree = "<group>"; };
+		CE25BE982B88C199004230CC /* ContactsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeatureTests.swift; sourceTree = "<group>"; };
 		CE2EFE322B866DAD001CB468 /* TCANavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCANavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationApp.swift; sourceTree = "<group>"; };
 		CE2EFE372B866DAD001CB468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +42,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE25BE8C2B88C181004230CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE2EFE2F2B866DAD001CB468 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE25BE902B88C181004230CC /* TCANavigationTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE25BE912B88C181004230CC /* TCANavigationTests.swift */,
+				CE25BE982B88C199004230CC /* ContactsFeatureTests.swift */,
+			);
+			path = TCANavigationTests;
+			sourceTree = "<group>";
+		};
 		CE2EFE292B866DAD001CB468 = {
 			isa = PBXGroup;
 			children = (
 				CE2EFE342B866DAD001CB468 /* TCANavigation */,
+				CE25BE902B88C181004230CC /* TCANavigationTests */,
 				CE2EFE332B866DAD001CB468 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2EFE322B866DAD001CB468 /* TCANavigation.app */,
+				CE25BE8F2B88C181004230CC /* TCANavigationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +111,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE25BE8E2B88C181004230CC /* TCANavigationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE25BE952B88C181004230CC /* Build configuration list for PBXNativeTarget "TCANavigationTests" */;
+			buildPhases = (
+				CE25BE8B2B88C181004230CC /* Sources */,
+				CE25BE8C2B88C181004230CC /* Frameworks */,
+				CE25BE8D2B88C181004230CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE25BE942B88C181004230CC /* PBXTargetDependency */,
+			);
+			name = TCANavigationTests;
+			productName = TCANavigationTests;
+			productReference = CE25BE8F2B88C181004230CC /* TCANavigationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CE2EFE312B866DAD001CB468 /* TCANavigation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE2EFE402B866DAE001CB468 /* Build configuration list for PBXNativeTarget "TCANavigation" */;
@@ -108,6 +159,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					CE25BE8E2B88C181004230CC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = CE2EFE312B866DAD001CB468;
+					};
 					CE2EFE312B866DAD001CB468 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -130,11 +185,19 @@
 			projectRoot = "";
 			targets = (
 				CE2EFE312B866DAD001CB468 /* TCANavigation */,
+				CE25BE8E2B88C181004230CC /* TCANavigationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE25BE8D2B88C181004230CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE2EFE302B866DAD001CB468 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +210,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE25BE8B2B88C181004230CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE25BE922B88C181004230CC /* TCANavigationTests.swift in Sources */,
+				CE25BE992B88C199004230CC /* ContactsFeatureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE2EFE2E2B866DAD001CB468 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,7 +232,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CE25BE942B88C181004230CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE2EFE312B866DAD001CB468 /* TCANavigation */;
+			targetProxy = CE25BE932B88C181004230CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CE25BE962B88C181004230CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K9U45N8FBN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andrii.kvashuk.TCANavigationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TCANavigation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TCANavigation";
+			};
+			name = Debug;
+		};
+		CE25BE972B88C181004230CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K9U45N8FBN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andrii.kvashuk.TCANavigationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TCANavigation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TCANavigation";
+			};
+			name = Release;
+		};
 		CE2EFE3E2B866DAE001CB468 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -341,6 +457,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE25BE952B88C181004230CC /* Build configuration list for PBXNativeTarget "TCANavigationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE25BE962B88C181004230CC /* Debug */,
+				CE25BE972B88C181004230CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE2EFE2D2B866DAD001CB468 /* Build configuration list for PBXProject "TCANavigation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -15,6 +15,7 @@ struct Contact: Identifiable, Equatable {
 
 @Reducer
 struct ContactsFeature {
+    @Dependency(\.uuid) var uuid
     
     @ObservableState
     struct State {
@@ -27,7 +28,7 @@ struct ContactsFeature {
         case deleteButtonTapped(id: Contact.ID)
         case destination(PresentationAction<Destination.Action>)
         
-        enum Alert {
+        enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
         }
     }
@@ -44,7 +45,7 @@ struct ContactsFeature {
             case .addButtonTapped:
                 state.destination = .addContact(
                     AddContactsFeature.State(
-                        contact: Contact(id: UUID(), name: "Bob")
+                        contact: Contact(id: self.uuid(), name: "")
                     )
                 )
                 return .none
