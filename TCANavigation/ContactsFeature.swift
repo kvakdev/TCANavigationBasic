@@ -18,7 +18,7 @@ struct ContactsFeature {
     @Dependency(\.uuid) var uuid
     
     @ObservableState
-    struct State {
+    struct State: Equatable {
         @Presents var destination: Destination.State?
         var contacts: IdentifiedArrayOf<Contact> = []
         var path = StackState<ContactDetailFeature.State>()
@@ -35,7 +35,7 @@ struct ContactsFeature {
         }
     }
     
-    @Reducer
+    @Reducer(state: .equatable)
     enum Destination {
         case addContact(AddContactsFeature)
         case alert(AlertState<ContactsFeature.Action.Alert>)
