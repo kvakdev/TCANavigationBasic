@@ -10,6 +10,7 @@
 		CE25BE8A2B866F43004230CC /* AddContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE892B866F43004230CC /* AddContactsFeature.swift */; };
 		CE25BE922B88C181004230CC /* TCANavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE912B88C181004230CC /* TCANavigationTests.swift */; };
 		CE25BE992B88C199004230CC /* ContactsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE982B88C199004230CC /* ContactsFeatureTests.swift */; };
+		CE25BE9B2B88DDC2004230CC /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25BE9A2B88DDC2004230CC /* ContactDetailFeature.swift */; };
 		CE2EFE362B866DAD001CB468 /* TCANavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */; };
 		CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFE372B866DAD001CB468 /* ContentView.swift */; };
 		CE2EFE3A2B866DAE001CB468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2EFE392B866DAE001CB468 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		CE25BE8F2B88C181004230CC /* TCANavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCANavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE25BE912B88C181004230CC /* TCANavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationTests.swift; sourceTree = "<group>"; };
 		CE25BE982B88C199004230CC /* ContactsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeatureTests.swift; sourceTree = "<group>"; };
+		CE25BE9A2B88DDC2004230CC /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
 		CE2EFE322B866DAD001CB468 /* TCANavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCANavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2EFE352B866DAD001CB468 /* TCANavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationApp.swift; sourceTree = "<group>"; };
 		CE2EFE372B866DAD001CB468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				CE2EFE372B866DAD001CB468 /* ContentView.swift */,
 				CE2EFE462B866DE2001CB468 /* ContactsFeature.swift */,
 				CE25BE892B866F43004230CC /* AddContactsFeature.swift */,
+				CE25BE9A2B88DDC2004230CC /* ContactDetailFeature.swift */,
 				CE2EFE392B866DAE001CB468 /* Assets.xcassets */,
 				CE2EFE3B2B866DAE001CB468 /* Preview Content */,
 			);
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE25BE9B2B88DDC2004230CC /* ContactDetailFeature.swift in Sources */,
 				CE2EFE382B866DAD001CB468 /* ContentView.swift in Sources */,
 				CE2EFE362B866DAD001CB468 /* TCANavigationApp.swift in Sources */,
 				CE2EFE472B866DE2001CB468 /* ContactsFeature.swift in Sources */,
